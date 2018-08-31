@@ -1,0 +1,29 @@
+{
+  "name": "aconex-bootcamp-frontend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/apexit1994/aconex-bootcamp-frontend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/apexit1994/aconex-bootcamp-frontend/issues"
+  },
+  "homepage": "https://github.com/apexit1994/aconex-bootcamp-frontend#readme",
+  "dependencies": {
+    "karma-cli": "^1.0.1",
+    "jasmine-core": "^3.2.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^1.1.2",
+    "angular-mocks": "^1.4.6"
+  }
+}
