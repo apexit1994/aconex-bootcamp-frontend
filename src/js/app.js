@@ -1,4 +1,4 @@
-var qaPortal = angular.module('qaPortal',[]);
+var qaPortal = angular.module('qaPortal',['ngRoute','ngResource']);
 
 qaPortal.config(function($routeProvider){
 
@@ -6,31 +6,31 @@ qaPortal.config(function($routeProvider){
 	
 
 	.when('/',{
-		templateUrl: 'page/postQues.html',
+		templateUrl: 'src/html/page/postQues.html',
 		controller: 'postQuesController'
 	})
     
     .when('/postedQues',{
-		templateUrl: 'page/postedQues.html',
+		templateUrl: 'src/html/page/postedQues.html',
 		controller: 'postedQuesController'
 	})
     
     .when('/postQues',{
-		templateUrl: 'page/postQues.html',
+		templateUrl: 'src/html/page/postQues.html',
 		controller: 'postQuesController'
 	})
 
 	.when('/home',{
-		templateUrl:'home/home.html'
+		templateUrl:'src/html/home/home.html'
 	})
 
 	.when('/profile',{
-		templateUrl:'profile/profile.html',
+		templateUrl:'src/html/profile/profile.html',
 		controller: 'profilectrl'
 	})
 
 	.when('/queans',{
-		templateUrl:'QuestionAnswer/queans.html'
+		templateUrl:'src/html/QuestionAnswer/queans.html'
 	})
 
 });
