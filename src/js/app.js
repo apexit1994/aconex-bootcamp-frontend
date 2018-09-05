@@ -1,6 +1,6 @@
-var qaPortal = angular.module('qaPortal',['ngRoute','ngResource']);
+angular.module('qaPortal',['ngRoute','ngResource'])
 
-qaPortal.config(function($routeProvider){
+.config(function($routeProvider){
 
 	$routeProvider
 	
@@ -33,13 +33,13 @@ qaPortal.config(function($routeProvider){
 		templateUrl:'src/html/QuestionAnswer/queans.html'
 	})
 
-});
+})
 
-qaPortal.service('questionService',function(){
+.service('questionService',function(){
 	this.ques="";
-});
+})
 
-qaPortal.controller('postQuesController',['$scope','questionService' ,function($scope,questionService){
+.controller('postQuesController',['$scope','questionService' ,function($scope,questionService){
 
 	$scope.ques = questionService.ques;
    
@@ -61,18 +61,18 @@ qaPortal.controller('postQuesController',['$scope','questionService' ,function($
     console.log($scope.ques);
     console.log($scope.items);
 
-}]);
+}])
 
-qaPortal.controller('postedQuesController',['$scope','questionService' ,function($scope,questionService){
+.controller('postedQuesController',['$scope','questionService' ,function($scope,questionService){
 
 	$scope.ques = questionService.ques;
     $scope.items = questionService.items;
     console.log($scope.ques);
     console.log($scope.items);
 
-}]);
+}])
 
-qaPortal.controller('profilectrl', function($scope) {
+.controller('profilectrl', function($scope) {
     // initial items
    	$scope.username='Apexit';
    	$scope.emailid='apexit1994@gmail.com';
@@ -80,15 +80,15 @@ qaPortal.controller('profilectrl', function($scope) {
    	$scope.questionasked=26;
    	$scope.questionanswered=112;
     
-});
+})
 
-qaPortal.controller('homectrl', function($scope) {
+.controller('homectrl', function($scope) {
     // initial items
     
-});
+})
 
 
-qaPortal.controller('datactrl',
+.controller('datactrl',
         function ($scope, $http) {
         	
                     console.log("done");
@@ -112,10 +112,10 @@ qaPortal.controller('datactrl',
                 .error(function () {
 
                 });
-        });
+        })
 
-qaPortal.controller('queansctrl', function($scope) {
+.controller('queansctrl', function($scope) {
         $scope.votes=23;
         $scope.answers=43;
         $scope.askedby='Apexit';
-});
+})
