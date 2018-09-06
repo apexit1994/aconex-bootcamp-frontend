@@ -95,7 +95,7 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 
             var request = {
                 method: 'get',
-                url: 'http://10.191.245.102:8080/questions',
+                url: 'http://10.191.252.140:8080/questions',
                 dataType: 'json',
                 contentType: "application/json"
             };
@@ -108,9 +108,10 @@ angular.module('qaPortal',['ngRoute','ngResource'])
                     console.log("in success");
                     $scope.arrBirds = jsonData;
                     $scope.list = $scope.arrBirds;
+                    console.log($scope.list);
                 })
                 .error(function () {
-
+                    console.log("not able to fetch data");
                 });
         })
 

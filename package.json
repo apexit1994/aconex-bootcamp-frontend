@@ -29,6 +29,9 @@
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^1.1.2",
     "angular-route": "1.4.0",
-    "angular-resource": "1.4.0"
+    "angular-resource": "1.4.0",
+    "browser-sync": "^2.24.7",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1"
   }
 }
