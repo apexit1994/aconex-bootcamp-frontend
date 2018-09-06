@@ -28,8 +28,8 @@ gulp.task('js', function() {
 });
 
 gulp.task('html', function() {
-    return gulp.src('./src/html/*.html')
-        .pipe(gulp.dest('./build/'))
+    return gulp.src('./*.html')
+        .pipe(gulp.dest('./build/html'))
         .pipe(browserSync.reload({
             stream: true
         }));
