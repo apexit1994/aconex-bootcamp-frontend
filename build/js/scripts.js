@@ -2779,31 +2779,31 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 	
 
 	.when('/',{
-		templateUrl: 'src/html/page/postQues.html',
+		templateUrl: 'src/html/postQues.html',
 		controller: 'postQuesController'
 	})
     
     .when('/postedQues',{
-		templateUrl: 'src/html/page/postedQues.html',
+		templateUrl: 'src/html/postedQues.html',
 		controller: 'postedQuesController'
 	})
     
     .when('/postQues',{
-		templateUrl: 'src/html/page/postQues.html',
+		templateUrl: 'src/html/postQues.html',
 		controller: 'postQuesController'
 	})
 
 	.when('/home',{
-		templateUrl:'src/html/home/home.html'
+		templateUrl:'src/html/home.html'
 	})
 
 	.when('/profile',{
-		templateUrl:'src/html/profile/profile.html',
+		templateUrl:'src/html/profile.html',
 		controller: 'profilectrl'
 	})
 
 	.when('/queans',{
-		templateUrl:'src/html/QuestionAnswer/queans.html'
+		templateUrl:'src/html/queans.html'
 	})
 
 })

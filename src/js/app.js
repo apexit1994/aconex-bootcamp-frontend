@@ -6,31 +6,31 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 	
 
 	.when('/',{
-		templateUrl: 'src/html/page/postQues.html',
+		templateUrl: 'src/html/postQues.html',
 		controller: 'postQuesController'
 	})
     
     .when('/postedQues',{
-		templateUrl: 'src/html/page/postedQues.html',
+		templateUrl: 'src/html/postedQues.html',
 		controller: 'postedQuesController'
 	})
     
     .when('/postQues',{
-		templateUrl: 'src/html/page/postQues.html',
+		templateUrl: 'src/html/postQues.html',
 		controller: 'postQuesController'
 	})
 
 	.when('/home',{
-		templateUrl:'src/html/home/home.html'
+		templateUrl:'src/html/home.html'
 	})
 
 	.when('/profile',{
-		templateUrl:'src/html/profile/profile.html',
+		templateUrl:'src/html/profile.html',
 		controller: 'profilectrl'
 	})
 
 	.when('/queans',{
-		templateUrl:'src/html/QuestionAnswer/queans.html'
+		templateUrl:'src/html/queans.html'
 	})
 
 })
@@ -39,7 +39,7 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 	this.ques="";
 })
 
-.controller('postQuesController',['$scope','questionService' ,function($scope,questionService){
+.controller('postQuesController',['$scope','questionService', "$http" ,function($scope,questionService,$http){
 
 	$scope.ques = questionService.ques;
    
@@ -51,12 +51,31 @@ angular.module('qaPortal',['ngRoute','ngResource'])
     		$scope.items.push($scope.item);
     		$scope.item="";
     };
-    $scope.$watch('ques',function(){
-        questionService.ques = $scope.ques;
-	});
-    $scope.$watch('items',function(){
-        questionService.items = $scope.items;
-	});
+
+    $scope.postdata =function()
+    {
+        $scope.debug = "Fetching...";    
+        $scope.json= "";
+        $scope.message = "";
+        var baseUrl="http://10.191.238.168:9090/questions"; 
+
+        var request = {
+            questionId:0, 
+            question: "this is new"
+        };
+
+        $http.post(baseUrl, JSON.stringify(request) ,{
+            status:200,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Credentials':true,
+                'Access-Control-Allow-Origin':true
+            },
+            body: {
+                ok: true
+            }
+        });
+    };
 
     console.log($scope.ques);
     console.log($scope.items);
@@ -95,7 +114,7 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 
             var request = {
                 method: 'get',
-                url: 'http://10.191.252.140:8080/questions',
+                url: 'http://10.191.238.168:9090/questions',
                 dataType: 'json',
                 contentType: "application/json"
             };
