@@ -11,8 +11,8 @@ var devMode = false;
 
 gulp.task('css', function() {
     gulp.src(styles)
-        .pipe(concat('main.css'))
-        .pipe(gulp.dest('build/css'))
+        .pipe(concat('styleshome.css'))
+        .pipe(gulp.dest('./build/src/css'))
         .pipe(browserSync.reload({
             stream: true
         }));
@@ -20,16 +20,16 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
     gulp.src(scripts)
-        .pipe(concat('scripts.js'))
-        .pipe(gulp.dest('./build/js'))
+        .pipe(concat('app.js'))
+        .pipe(gulp.dest('./build/src/js'))
         .pipe(browserSync.reload({
             stream: true
         }));
 });
 
 gulp.task('html', function() {
-    return gulp.src('./*.html')
-        .pipe(gulp.dest('./build/html'))
+    return gulp.src('./**/*.html')
+        .pipe(gulp.dest('./build'))
         .pipe(browserSync.reload({
             stream: true
         }));
