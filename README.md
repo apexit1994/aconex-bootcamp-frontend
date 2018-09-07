@@ -11,11 +11,10 @@ Gulp & Gulp-Cli (v3.9.1) "sudo npm install gulp -g"<br>
 Karma  installed by "sudo npm install -g karma-cli"<br> 
 
 
-Installation
+<h3>Installation</h3>
 
 clone/download the repository: git clone 
 https://github.com/apexit1994/aconex-bootcamp-frontend.git
-
 run command "npm install" to install dependencies and devDependencies in project folder
 run command "npm test" to start Karma for testing in project folder
 run command "gulp build" and "gulp start" to watch for local file changes in project folder
