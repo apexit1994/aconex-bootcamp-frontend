@@ -1,14 +1,14 @@
 # aconex-bootcamp-frontend
 
-Front-end for movie ticket booking app
+Front-end for QA portal
 
 
 <h3>Prerequisites</h3>
 
 
-Node
-Gulp & Gulp-Cli (v3.9.1) "sudo npm install gulp -g"
-Karma  installed by "sudo npm install -g karma-cli" 
+Node <br>
+Gulp & Gulp-Cli (v3.9.1) "sudo npm install gulp -g"<br>
+Karma  installed by "sudo npm install -g karma-cli"<br> 
 
 
 Installation
