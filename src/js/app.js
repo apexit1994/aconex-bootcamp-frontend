@@ -1,4 +1,4 @@
-var baseurl="http://10.191.198.64:8080/questions";
+var baseurl="http://10.191.221.105:8080/questions";
 
 angular.module('qaPortal',['ngRoute','ngResource'])
 
@@ -31,7 +31,7 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 	})
 
 	.when('/queans',{
-		templateUrl:'src/html/queans.html'
+		templateUrl:'src/html/home.html'
 	})
 
 })
@@ -67,6 +67,8 @@ angular.module('qaPortal',['ngRoute','ngResource'])
             data: senddata,
             headers: {'Content-Type': 'application/json'}
         });
+
+        alert("done");
     }
 
 }])

@@ -8,6 +8,7 @@ div.wrapper {
     background-color: #a3a3ff;
     padding: 50px;
     border-radius: 2px;
+    font-family: myFirstFont;
 }
 div.tags{
     background-color: #ffaaaa;
@@ -19,31 +20,37 @@ div.tags{
     border:1px solid #ffdd7c;
     float:  left;
     font-size: 10px;
+    font-family: myFirstFont;
 }
 form {
     position: relative;
     display: block;
+    font-family: myFirstFont;
 }
 
 input [type="text"]{
     border-radius: 10px;
     border: 100px solid black;
-    border-color: black;
+    border-color: black;  
+    font-family: myFirstFont;
 }
 
 div.valuestext{
     padding: 1px; 
     text-align: center;
     font-size: 10px; 
+    font-family: myFirstFont;
 }
 div.values{
     text-align: center;
     font-size: 30px;
     font-weight: bold;
+    font-family: myFirstFont;
 }
 div.valuescontainer{
     float:left;display: block;
     margin:5px;
+    font-family: myFirstFont;
 }
 
 div.questionbox{
@@ -58,6 +65,7 @@ div.questionbox{
     clear: right;
     display: block;
     font-size: 15px;
+    font-family: myFirstFont;
 }
 
 div.askedby{
@@ -71,37 +79,55 @@ div.askedby{
     margin-top: 0px;
     font-size: 10px;
     clear: both;
+    font-family: myFirstFont;
 }
 
 div.questioncontainer{
     clear: both;
-    height: 100px;
     background-color: white;
-    margin: 4px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin: 10px;
+    -webkit-text-fill-color: #222222;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: myFirstFont;
 }
 
 div.centralsection{
 
   display: table;
   margin: 0 auto;
+  font-family: myFirstFont;
   width: 50%;
 }
 
 div.userinfocontainer{
     max-width: 1000px;
+    font-family: myFirstFont;
 
 }
 
 div.userinfo{
     font-size: 19px;
+    font-family: myFirstFont;
 }
 
 div.singlequestion{
-    font-size: 30px;
+    font-size: 20px;
+    font-weight: bold;
     clear: both;   
+    font-family: myFirstFont;
 }
 
 div.quedatabox{
     font-size: 15px;
     clear: both;
+    -webkit-text-fill-color: #444444;
+    font-family: myFirstFont;
+}
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(sansation_light.woff);
 }

@@ -10,20 +10,18 @@
 				<div class='userinfo'>Question Answered : {{questionanswered}}<div >
 			</div>
 		</div>
-		<div class="allquestions" style="margin-top: 100px" ng-controller="datactrl">
-			<div class='questioncontainer' ng-repeat="x in list">
-				<div class="valuescontainer">
-					<div class="valuestext">Answers</div>
-					<div class='values'>2</div>
-				</div>
-				<div class="valuescontainer" style="margin-left: -1px">
-					<div class='valuestext'>Votes</div>
-					<div class='values'>5</div>
-				</div>
-				<div class="questionbox">
-					{{x.question}}
-				</div>
-				<div class="askedby">Apexit asked this</div>
+		<div ng-controller="datactrl" style="margin-top:40px;margin-left: -10px;margin-right:  -10px;">
+			<div class="allquestions" ng-repeat="x in list">
+					
+					<div class="questioncontainer"ng-controller="queansctrl">
+						<div class="onequestioncontainer">
+							<div class="singlequestion">
+								{{x.question}}
+							</div>
+							<div class="quedatabox">Votes: {{votes}}, Answers: {{answers}}, {{askedby}} asked this</div>
+						</div>
+					</div>
+					
 			</div>
 		</div>
 	</div>
