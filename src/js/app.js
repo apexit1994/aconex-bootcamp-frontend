@@ -1,9 +1,10 @@
+var baseurl="http://10.191.198.64:8080/questions";
+
 angular.module('qaPortal',['ngRoute','ngResource'])
 
 .config(function($routeProvider){
 
 	$routeProvider
-	
 
 	.when('/',{
 		templateUrl: 'src/html/postQues.html',
@@ -42,7 +43,7 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 .controller('postQuesController',['$scope','questionService', "$http" ,function($scope,questionService,$http){
 
 	$scope.ques = questionService.ques;
-   
+    $scope.loadStatus="data retrived";
    	$scope.items = [];
 
     // add an item
@@ -54,31 +55,19 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 
     $scope.postdata =function()
     {
-        $scope.debug = "Fetching...";    
-        $scope.json= "";
-        $scope.message = "";
-        var baseUrl="http://10.191.238.168:9090/questions"; 
 
-        var request = {
+        var senddata = JSON.stringify({
             questionId:0, 
-            question: "this is new"
-        };
-
-        $http.post(baseUrl, JSON.stringify(request) ,{
-            status:200,
-            headers: {
-                'Content-Type': 'application/json',
-                'Access-Control-Allow-Credentials':true,
-                'Access-Control-Allow-Origin':true
-            },
-            body: {
-                ok: true
-            }
+            question: $scope.ques
         });
-    };
 
-    console.log($scope.ques);
-    console.log($scope.items);
+        $http({
+            method: 'POST',
+            url: baseurl,
+            data: senddata,
+            headers: {'Content-Type': 'application/json'}
+        });
+    }
 
 }])
 
@@ -98,12 +87,10 @@ angular.module('qaPortal',['ngRoute','ngResource'])
    	$scope.password='newpassword';
    	$scope.questionasked=26;
    	$scope.questionanswered=112;
-    
 })
 
 .controller('homectrl', function($scope) {
-    // initial items
-    
+    // initial item
 })
 
 
@@ -114,21 +101,16 @@ angular.module('qaPortal',['ngRoute','ngResource'])
 
             var request = {
                 method: 'get',
-                url: 'http://10.191.249.34:9090/questions',
+                url: baseurl,
                 dataType: 'json',
                 contentType: "application/json"
             };
 
-            $scope.arrBirds = new Array;
-
+            $scope.arrdata = new Array;
             $http(request)
                 .success(function (jsonData) {
-
-                    console.log("in success");
-                    $scope.arrBirds = jsonData;
-                    $scope.list = $scope.arrBirds;
-                    console.log($scope.list);
-                    
+                    $scope.arrdata = jsonData;
+                    $scope.list = $scope.arrdata;
                 })
                 .error(function () {
                     console.log("not able to fetch data");

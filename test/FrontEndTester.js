@@ -1,24 +1,25 @@
-  describe('datactrl', function() {
+describe('datactrl', function() {
 
     beforeEach(module('qaPortal'));
-  /*
-    it('initialises scope', 
-        inject(function($controller, $rootScope) {
-            var scope = $rootScope.$new();
-            var profilectrl = $controller('profilectrl', {$scope: scope});
-            expect(scope.username).toBe("Apexit");
-    }));
+
     it('initialises scopes', 
-        inject(function($controller, $rootScope) {
-            var scope = $rootScope.$new();
-            var profilectrl = $controller('profilectrl', {$scope: scope});
-            expect(scope.password).toBe("newpassword");
+      inject(function($controller, $rootScope) {
+          var scope = $rootScope.$new();
+          var datactrl = $controller('datactrl', {
+              $scope: scope
+            });
+          expect(scope.loadStatus).toBe('data loaded');
     }));
-    */
+
     it('initialises scopes', 
     inject(function($controller, $rootScope) {
         var scope = $rootScope.$new();
-        var datactrl = $controller('datactrl', {$scope: scope});
-        expect(scope.loadStatus).toBe('data loaded');
-}));
-  });
+        var datactrl = $controller('postQuesController', {
+            $scope: scope
+          });
+        expect(scope.loadStatus).toBe('data retrived');
+    }));
+
+
+
+});
