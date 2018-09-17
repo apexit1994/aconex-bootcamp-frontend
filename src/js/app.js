@@ -1,4 +1,4 @@
-var baseurl="http://10.191.221.105:8080/questions";
+var baseurl="http://localhost:8084/questions";
 
 angular.module('qaPortal',['ngRoute','ngResource'])
 
@@ -67,7 +67,7 @@ angular.module('qaPortal',['ngRoute','ngResource'])
             data: senddata,
             headers: {'Content-Type': 'application/json'}
         });
-
+        console.log($scope.items);
         alert("done");
     }
 
